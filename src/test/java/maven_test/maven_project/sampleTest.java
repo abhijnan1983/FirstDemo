@@ -16,6 +16,7 @@ public class sampleTest {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.google.com");
+		driver.navigate().refresh();
 		
 		System.out.println("perform a smoke test");
 	}
