@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-14T10:24:32 PDT" name="Surefire suite" finished-at="2024-03-14T10:24:42 PDT" duration-ms="10386">
+    <groups>
+    </groups>
+    <test started-at="2024-03-14T10:24:32 PDT" name="Surefire test" finished-at="2024-03-14T10:24:42 PDT" duration-ms="10386">
+      <class name="maven_test.maven_project.sampleTest">
+        <test-method signature="smoke()[pri:0, instance:maven_test.maven_project.sampleTest@7fc2413d]" started-at="2024-03-14T10:24:32 PDT" name="smoke" finished-at="2024-03-14T10:24:42 PDT" duration-ms="10323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smoke -->
+      </class> <!-- maven_test.maven_project.sampleTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
