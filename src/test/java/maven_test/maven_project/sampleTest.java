@@ -21,7 +21,7 @@ public class sampleTest {
 		
 		
 		System.out.println("perform a smoke test after the feature change");
-		System.out.println("Changes from Abhi-New branch");
+		System.out.println("More Changes from Abhi-New branch");
 
 	}
 
