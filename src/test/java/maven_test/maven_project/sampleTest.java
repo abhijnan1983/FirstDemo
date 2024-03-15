@@ -22,6 +22,7 @@ public class sampleTest {
 		
 		System.out.println("perform a smoke test after the feature change");
 		System.out.println("Experiment");
+		System.out.println("Experiment to merge from develop branch");
 	}
 
 }
