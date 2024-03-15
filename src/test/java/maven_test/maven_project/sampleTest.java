@@ -31,6 +31,7 @@ public class sampleTest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();
 		driver.manage().deleteAllCookies();
+driver.get("https://www.amazon.com");
 }
 
 }
