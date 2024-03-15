@@ -26,4 +26,11 @@ public class sampleTest {
 		System.out.println("Updated in develop branch from git");
 	}
 
+@Test
+	public void smoke() {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().deleteAllCookies();
+}
+
 }
