@@ -20,7 +20,7 @@ public class sampleTest {
 		driver.navigate().refresh();
 		
 		
-		System.out.println("perform a smoke test");
+		System.out.println("perform a smoke test after the feature change");
 	}
 
 }
