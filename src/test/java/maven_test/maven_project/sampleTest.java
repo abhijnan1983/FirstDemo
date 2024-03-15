@@ -21,17 +21,9 @@ public class sampleTest {
 		
 		
 		System.out.println("perform a smoke test after the feature change");
-		System.out.println("Experiment");
-		System.out.println("Experiment to merge from develop branch");
-		System.out.println("Updated in develop branch from git");
+
 	}
 
-@Test
-	public void smoke() {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
-		driver.manage().deleteAllCookies();
-driver.get("https://www.amazon.com");
-}
+
 
 }
