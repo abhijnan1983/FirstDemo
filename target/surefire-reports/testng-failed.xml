@@ -5,7 +5,9 @@
     <classes>
       <class name="maven_test.maven_project.sampleTest">
         <methods>
-          <include name="smoke"/>
+          <include name="launch_site"/>
+          <include name="handle_popup"/>
+          <include name="find_store"/>
         </methods>
       </class> <!-- maven_test.maven_project.sampleTest -->
     </classes>
