@@ -1,6 +1,8 @@
 package maven_test.maven_project;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -31,6 +33,10 @@ public class sampleTest {
 	WebDriverWait wait;
 	Actions a;
 	JavascriptExecutor js;
+	String url;
+	String brand_name;
+	List<String> initial_active_brands;
+	List<String> later_active_brands;
 	
 	@BeforeTest
 	public void launch_site() {
@@ -127,7 +133,7 @@ public class sampleTest {
 		
 		while(counter1<10) {
 			String image1_active=image_one.getAttribute("class");
-			System.out.println(image1_active);
+			//System.out.println(image1_active);
 			if(image1_active.contains("active")) {
 				WebElement image=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#m-1689863456011>div:nth-child(1)>div:nth-child(1)>div>div:nth-child(3) img")));
 				a.moveToElement(image).build().perform();
@@ -148,7 +154,7 @@ public class sampleTest {
 		
 		while(counter2<10) {
 			String image2_active=image_two.getAttribute("class");
-			System.out.println(image2_active);
+			//System.out.println(image2_active);
 			if(image2_active.contains("active")) {
 				
 				break;
@@ -162,8 +168,85 @@ public class sampleTest {
 		
 	}
 	
+	@Test(priority=6)
+	public void verify_top_brands() {
+		
+		initial_active_brands=new ArrayList<String>();
+		later_active_brands=new ArrayList<String>();
+		//Store all brands in a list by using generic locator for the brands under top brands and then print number of brands
+		List<WebElement> top_brands=new ArrayList<WebElement>();
+
+		
+		top_brands=driver.findElements(By.cssSelector("div#m-1689865380373>div>div:nth-child(1)>div>div"));
+		System.out.println("Number of top brands "+top_brands.size());
+		
+		
+		//Iterate through all the brands and print the brands which are currently displayed on the page.
+		for(WebElement brand:top_brands) {
+			
+			String brand_active_status=brand.getAttribute("class");
+			
+			if(brand_active_status.contains("active")) {
+			
+			WebElement link=brand.findElement(By.tagName("a"));
+			url=link.getAttribute("href");
+			String brand_name=brand_from_url(url);
+			initial_active_brands.add(brand_name);
+			
+			}
+			
+			
+		}
+		
+		
+		
+		//Hover on the 6th brand displayed to enable the arrow buttons
+		a.moveToElement(driver.findElement(By.cssSelector("div#m-1689865380373>div>div:nth-child(1)>div>div:nth-child(6)"))).build().perform();
+		
+		//Click on right arrow button 5 times to display new set of top brands on the page
+		Integer number_of_click=0;
+		
+		while(number_of_click<6) {
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#m-1689865380373>div>div:nth-child(2)>button:nth-child(2)"))).click();
+			
+			number_of_click++;
+		}
+		
+		//Iterate through brands and get new list of active brands on the page
+		for(WebElement brand:top_brands) {
+			
+			String brand_active_status=brand.getAttribute("class");
+			
+			if(brand_active_status.contains("active")) {
+			
+			WebElement link=brand.findElement(By.tagName("a"));
+			url=link.getAttribute("href");
+			String brand_name=brand_from_url(url);
+			later_active_brands.add(brand_name);
+			
+			}
+			
+			
+		}
+		
+		System.out.println(initial_active_brands);
+		System.out.println(later_active_brands);
+		
+
+		
+
+		
+	}
 	
 	
+	public String brand_from_url(String url) {
+		Integer length_url=url.length();
+		Integer last_slash_index=url.lastIndexOf("/");
+		brand_name=url.substring(last_slash_index+1, length_url);
+		return brand_name;
+		
+	}
 	
 	
 	
