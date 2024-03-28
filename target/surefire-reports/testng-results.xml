@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-25T13:48:41 PDT" name="Surefire suite" finished-at="2024-03-25T13:49:45 PDT" duration-ms="63796">
+  <suite started-at="2024-03-27T19:05:47 PDT" name="Surefire suite" finished-at="2024-03-27T19:06:55 PDT" duration-ms="67409">
     <groups>
     </groups>
-    <test started-at="2024-03-25T13:48:41 PDT" name="Surefire test" finished-at="2024-03-25T13:49:45 PDT" duration-ms="63796">
+    <test started-at="2024-03-27T19:05:47 PDT" name="Surefire test" finished-at="2024-03-27T19:06:55 PDT" duration-ms="67409">
       <class name="maven_test.maven_project.sampleTest">
-        <test-method is-config="true" signature="launch_site()[pri:0, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:48:41 PDT" name="launch_site" finished-at="2024-03-25T13:49:15 PDT" duration-ms="33510" status="PASS">
+        <test-method is-config="true" signature="launch_site()[pri:0, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:05:48 PDT" name="launch_site" finished-at="2024-03-27T19:06:22 PDT" duration-ms="34299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch_site -->
-        <test-method signature="handle_popup()[pri:1, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:15 PDT" name="handle_popup" finished-at="2024-03-25T13:49:15 PDT" duration-ms="38" status="PASS">
+        <test-method signature="handle_popup()[pri:1, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:22 PDT" name="handle_popup" finished-at="2024-03-27T19:06:22 PDT" duration-ms="253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- handle_popup -->
-        <test-method signature="validate_logo()[pri:2, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:15 PDT" name="validate_logo" finished-at="2024-03-25T13:49:15 PDT" duration-ms="157" status="PASS">
+        <test-method signature="validate_logo()[pri:2, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:22 PDT" name="validate_logo" finished-at="2024-03-27T19:06:23 PDT" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_logo -->
-        <test-method signature="validate_reserve_online_message()[pri:3, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:15 PDT" name="validate_reserve_online_message" finished-at="2024-03-25T13:49:15 PDT" duration-ms="100" status="PASS">
+        <test-method signature="validate_reserve_online_message()[pri:3, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:23 PDT" name="validate_reserve_online_message" finished-at="2024-03-27T19:06:23 PDT" duration-ms="84" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_reserve_online_message -->
-        <test-method signature="find_store()[pri:4, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:15 PDT" name="find_store" finished-at="2024-03-25T13:49:31 PDT" duration-ms="15838" status="PASS">
+        <test-method signature="find_store()[pri:4, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:23 PDT" name="find_store" finished-at="2024-03-27T19:06:41 PDT" duration-ms="17887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- find_store -->
-        <test-method signature="verify_espot_rolling_images()[pri:5, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:31 PDT" name="verify_espot_rolling_images" finished-at="2024-03-25T13:49:42 PDT" duration-ms="10797" status="PASS">
+        <test-method signature="verify_espot_rolling_images()[pri:5, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:41 PDT" name="verify_espot_rolling_images" finished-at="2024-03-27T19:06:51 PDT" duration-ms="10678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_espot_rolling_images -->
-        <test-method signature="verify_top_brands()[pri:6, instance:maven_test.maven_project.sampleTest@2f112965]" started-at="2024-03-25T13:49:42 PDT" name="verify_top_brands" finished-at="2024-03-25T13:49:45 PDT" duration-ms="2841" status="PASS">
+        <test-method signature="verify_top_brands()[pri:6, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:51 PDT" name="verify_top_brands" finished-at="2024-03-27T19:06:54 PDT" duration-ms="2708" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_top_brands -->
+        <test-method signature="verify_hiring_banner()[pri:7, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:54 PDT" name="verify_hiring_banner" finished-at="2024-03-27T19:06:54 PDT" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_hiring_banner -->
+        <test-method signature="verify_findStore_banner()[pri:8, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:54 PDT" name="verify_findStore_banner" finished-at="2024-03-27T19:06:54 PDT" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_findStore_banner -->
+        <test-method signature="validate_browse_parts_button()[pri:9, instance:maven_test.maven_project.sampleTest@d4342c2]" started-at="2024-03-27T19:06:54 PDT" name="validate_browse_parts_button" finished-at="2024-03-27T19:06:55 PDT" duration-ms="680" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_browse_parts_button -->
       </class> <!-- maven_test.maven_project.sampleTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->

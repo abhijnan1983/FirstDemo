@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -37,6 +38,7 @@ public class sampleTest {
 	String brand_name;
 	List<String> initial_active_brands;
 	List<String> later_active_brands;
+	Select s;
 	
 	@BeforeTest
 	public void launch_site() {
@@ -245,6 +247,51 @@ public class sampleTest {
 		Integer last_slash_index=url.lastIndexOf("/");
 		brand_name=url.substring(last_slash_index+1, length_url);
 		return brand_name;
+		
+	}
+	
+	@Test(priority=7)
+	public void verify_hiring_banner() {
+		
+		WebElement hiring_banner=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#e-1661522315904")));
+		Assert.assertTrue(hiring_banner.isDisplayed());
+		
+	}
+	
+	@Test(priority=8)
+	public void verify_findStore_banner() {
+		
+		WebElement findStore_banner=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#r-1573160384857")));
+		Assert.assertTrue(findStore_banner.isDisplayed());
+		
+	}
+	
+	@Test(priority=9)
+	public void validate_browse_parts_button() {
+		
+		//Validate that browse parts button is disabled until vehicle's Year, Make, Model, Trim and Engine selected
+		WebElement button_browse_parts=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#vid_browse")));
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		//Select vehicle year and ensure that browse parts button is disabled after vehicle year is selected
+		//Model, Trim and Engine fields should be disabled after selecting the year
+		WebElement v_year=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_year")));
+		WebElement v_model=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(4)")));
+		WebElement v_trim=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(5)")));
+		WebElement v_engine=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(6)")));
+		
+		s=new Select(v_year);
+		s.selectByVisibleText("2019");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		
+		//Select vehicle make and ensure that browse parts button is disabled after vehicle year is selected
+		//Vehicle model field should become enabled and trim, engine fields should remain disabled
+		WebElement v_make=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_make")));
+		s=new Select(v_make);
+		s.selectByVisibleText("Toyota");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+
 		
 	}
 	

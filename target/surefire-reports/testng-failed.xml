@@ -5,8 +5,8 @@
     <classes>
       <class name="maven_test.maven_project.sampleTest">
         <methods>
-          <include name="verify_top_brands"/>
           <include name="launch_site"/>
+          <include name="validate_browse_parts_button"/>
         </methods>
       </class> <!-- maven_test.maven_project.sampleTest -->
     </classes>
