@@ -20,7 +20,9 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,7 +32,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class sampleTest {
 	
-	WebDriver driver;
+	private static WebDriver driver;
+	//private static ThreadLocal<WebDriver>threadlocaldriver=new ThreadLocal<>();
+	
+	
 	WebDriverWait wait;
 	Actions a;
 	JavascriptExecutor js;
@@ -41,43 +46,51 @@ public class sampleTest {
 	Select s;
 	
 	@BeforeTest
-	public void launch_site() {
+	public void launch_site() throws InterruptedException {
 		
 		
 		WebDriverManager.chromedriver().setup();
+		
 		driver=new ChromeDriver();
+		
 		a=new Actions(driver);
 		js = (JavascriptExecutor)driver;
 		wait=new WebDriverWait(driver,30);
 		
 		driver.get("https://www.partsource.ca/");
+		
 		driver.manage().window().maximize();
-		driver.navigate().refresh();
+	
+		 
 		
 	}
 	
+	@AfterTest
+	public void close_site() {
+		//driver.quit();
+	}
+	
+	
 	@Test(priority=1)
-	public void handle_popup() {
+	public void close_popup() throws InterruptedException {
 		
-		//Handle the initial pop up after launching the website
-		
-		String parent_window_id=driver.getWindowHandle();
-		Set<String> all_windows=driver.getWindowHandles();
-		Iterator<String> itr=all_windows.iterator();
-		
-		while(itr.hasNext()) {
-			String window_id=itr.next();
-			if(!(window_id.equals(parent_window_id))) {
-				driver.switchTo().window(window_id);
-				WebElement popup_close=driver.findElement(By.cssSelector("div#m-1635532295580>div+div"));
-				wait.until(ExpectedConditions.visibilityOf(popup_close)).click();
-				
-			}
-		}
-		
-		
+		  String parent_window_id=driver.getWindowHandle(); Set<String>
+		  all_windows=driver.getWindowHandles(); Iterator<String>
+		  itr=all_windows.iterator();
+		  
+		  while(itr.hasNext()) {
+		  String window_id=itr.next();
+		  if(!(window_id.equals(parent_window_id))) {
+		  driver.switchTo().window(window_id); 
+		  WebElement popup_close=driver.findElement(By.cssSelector("div#m-1635532295580>div+div"));
+		  wait.until(ExpectedConditions.visibilityOf(popup_close)).click();
+		  
+		  } 
+		  }
+
 		
 	}
+
 	
 	@Test(priority=2)
 	public void validate_logo() throws InterruptedException {
