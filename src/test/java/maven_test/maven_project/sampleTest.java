@@ -69,7 +69,7 @@ public class sampleTest {
 	public void close_site() {
 
 		//driver.quit()
-		System.out.println("remote code to create conflict");
+		
 		
 
 	}
