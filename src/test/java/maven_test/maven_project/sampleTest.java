@@ -68,6 +68,7 @@ public class sampleTest {
 	@AfterTest
 	public void close_site() {
 		//driver.quit();
+		System.out.println("test code to demo merge process with review");
 	}
 	
 	
