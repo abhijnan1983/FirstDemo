@@ -67,8 +67,11 @@ public class sampleTest {
 	
 	@AfterTest
 	public void close_site() {
-		//driver.quit();
-		System.out.println("code to create conflict");
+
+		//driver.quit()
+		System.out.println("remote code to create conflict");
+		
+
 	}
 	
 	
