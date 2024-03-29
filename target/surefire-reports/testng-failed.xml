@@ -5,7 +5,9 @@
     <classes>
       <class name="maven_test.maven_project.sampleTest">
         <methods>
-          <include name="smoke"/>
+          <include name="verify_espot_rolling_images"/>
+          <include name="launch_site"/>
+          <include name="close_site"/>
         </methods>
       </class> <!-- maven_test.maven_project.sampleTest -->
     </classes>
