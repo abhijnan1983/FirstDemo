@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="methods" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="maven_test.maven_project.ParallelTest">
+      <class name="maven_test.maven_project.sampleTest">
         <methods>
-          <include name="validate_logo"/>
-          <include name="find_store"/>
-          <include name="initialize_driver"/>
+          <include name="verify_espot_rolling_images"/>
+          <include name="launch_site"/>
+          <include name="validate_browse_parts_button"/>
+          <include name="close_site"/>
         </methods>
-      </class> <!-- maven_test.maven_project.ParallelTest -->
+      </class> <!-- maven_test.maven_project.sampleTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

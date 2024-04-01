@@ -284,7 +284,7 @@ public class sampleTest {
 	}
 	
 	@Test(priority=9)
-	public void validate_browse_parts_button() {
+	public void validate_browse_parts_button() throws InterruptedException {
 		
 		//Validate that browse parts button is disabled until vehicle's Year, Make, Model, Trim and Engine selected
 		WebElement button_browse_parts=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#vid_browse")));
@@ -293,10 +293,6 @@ public class sampleTest {
 		//Select vehicle year and ensure that browse parts button is disabled after vehicle year is selected
 		//Model, Trim and Engine fields should be disabled after selecting the year
 		WebElement v_year=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_year")));
-		WebElement v_model=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(4)")));
-		WebElement v_trim=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(5)")));
-		WebElement v_engine=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(6)")));
-		
 		s=new Select(v_year);
 		s.selectByVisibleText("2019");
 		Assert.assertFalse(button_browse_parts.isEnabled());
@@ -308,7 +304,52 @@ public class sampleTest {
 		s=new Select(v_make);
 		s.selectByVisibleText("Toyota");
 		Assert.assertFalse(button_browse_parts.isEnabled());
-
+		
+		//Select vehicle model and ensure after selection, the browse parts button is disabled
+		WebElement v_model=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_model")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_model")));
+		s=new Select(v_model);
+		s.selectByVisibleText("Camry");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		//Select vehicle trim and ensure after selection, browse parts button is disabled
+		WebElement v_trim=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_trim")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_trim")));
+		s=new Select(v_trim);
+		Thread.sleep(2000);
+		s.selectByVisibleText("XLE");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		
+		//Select vehicle engine and ensure that browse parts button is enabled after engine is selected
+		WebElement v_engine=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_engine")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_engine")));
+		s=new Select(v_engine);
+		Thread.sleep(2000);
+		s.selectByVisibleText("L4-152cid 2.5L FI A25A-FKS 203HP");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(button_browse_parts));
+		Assert.assertTrue(button_browse_parts.isEnabled());
+		
+		//Click Browse parts button
+		button_browse_parts.click();
+		
+		//Validate the page which launches has buttons "Change Vehicle" and "Browse Parts" and also validate vehicle name displayed
+		
+		/*
+		 * WebElement
+		 * my_vehicle=driver.findElement(By.cssSelector("span#selectedVehicle")); String
+		 * my_vehicle_text=wait.until(ExpectedConditions.refreshed(ExpectedConditions.
+		 * visibilityOf(my_vehicle))).getText(); System.out.println(my_vehicle_text);
+		 */
+		
+		WebElement button_change_vehiicle=driver.findElement(By.cssSelector("span#selectedVehicle+input"));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(button_change_vehiicle)));
+		Assert.assertTrue(button_change_vehiicle.isEnabled());
+		
+		WebElement button_browse_parts2=driver.findElement(By.cssSelector("span#selectedVehicle+input+input"));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(button_browse_parts2)));
+		Assert.assertTrue(button_browse_parts2.isEnabled());
 		
 	}
 	

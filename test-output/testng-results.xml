@@ -1,37 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="7" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-29T13:37:52 PDT" name="Suite" finished-at="2024-03-29T13:39:29 PDT" duration-ms="97194">
+  <suite started-at="2024-04-01T13:36:09 PDT" name="Default suite" finished-at="2024-04-01T13:37:47 PDT" duration-ms="97983">
     <groups>
     </groups>
-    <test started-at="2024-03-29T13:37:52 PDT" name="Test" finished-at="2024-03-29T13:39:29 PDT" duration-ms="97194">
-      <class name="maven_test.maven_project.ParallelTest">
-        <test-method is-config="true" signature="initialize_driver()[pri:0, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:37:52 PDT" name="initialize_driver" finished-at="2024-03-29T13:39:04 PDT" duration-ms="71888" status="PASS">
+    <test started-at="2024-04-01T13:36:09 PDT" name="Default test" finished-at="2024-04-01T13:37:47 PDT" duration-ms="97983">
+      <class name="maven_test.maven_project.sampleTest">
+        <test-method is-config="true" signature="launch_site()[pri:0, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:09 PDT" name="launch_site" finished-at="2024-04-01T13:36:23 PDT" duration-ms="13795" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialize_driver -->
-        <test-method is-config="true" signature="initialize_driver()[pri:0, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:37:52 PDT" name="initialize_driver" finished-at="2024-03-29T13:39:13 PDT" duration-ms="81346" status="PASS">
+        </test-method> <!-- launch_site -->
+        <test-method signature="close_popup()[pri:1, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:23 PDT" name="close_popup" finished-at="2024-04-01T13:36:23 PDT" duration-ms="31" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialize_driver -->
-        <test-method is-config="true" signature="initialize_driver()[pri:0, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:37:52 PDT" name="initialize_driver" finished-at="2024-03-29T13:39:13 PDT" duration-ms="81351" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize_driver -->
-        <test-method signature="find_store()[pri:3, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:39:04 PDT" name="find_store" finished-at="2024-03-29T13:39:29 PDT" duration-ms="25229" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- find_store -->
-        <test-method signature="validate_reserve_online_banner()[pri:2, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:39:13 PDT" name="validate_reserve_online_banner" finished-at="2024-03-29T13:39:13 PDT" duration-ms="118" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validate_reserve_online_banner -->
-        <test-method signature="validate_logo()[pri:1, instance:maven_test.maven_project.ParallelTest@5c33f1a9]" started-at="2024-03-29T13:39:13 PDT" name="validate_logo" finished-at="2024-03-29T13:39:13 PDT" duration-ms="134" status="PASS">
+        </test-method> <!-- close_popup -->
+        <test-method signature="validate_logo()[pri:2, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:23 PDT" name="validate_logo" finished-at="2024-04-01T13:36:23 PDT" duration-ms="282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_logo -->
-      </class> <!-- maven_test.maven_project.ParallelTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        <test-method signature="validate_reserve_online_message()[pri:3, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:23 PDT" name="validate_reserve_online_message" finished-at="2024-04-01T13:36:24 PDT" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_reserve_online_message -->
+        <test-method signature="find_store()[pri:4, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:24 PDT" name="find_store" finished-at="2024-04-01T13:36:38 PDT" duration-ms="14657" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_store -->
+        <test-method signature="verify_espot_rolling_images()[pri:5, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:36:38 PDT" name="verify_espot_rolling_images" finished-at="2024-04-01T13:37:09 PDT" duration-ms="30314" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: div#m-1689863456011>div:nth-child(1)>div:nth-child(1)>div>div:nth-child(4) (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63995}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8433a3113a3fa5cfb43795c3419d8a09]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div#m-1689863456011>div:nth-child(1)>div:nth-child(1)>div>div:nth-child(4) (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63995}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8433a3113a3fa5cfb43795c3419d8a09
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+at maven_test.maven_project.sampleTest.verify_espot_rolling_images(sampleTest.java:148)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_espot_rolling_images -->
+        <test-method signature="verify_top_brands()[pri:6, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:37:09 PDT" name="verify_top_brands" finished-at="2024-04-01T13:37:11 PDT" duration-ms="2021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_top_brands -->
+        <test-method signature="verify_hiring_banner()[pri:7, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:37:11 PDT" name="verify_hiring_banner" finished-at="2024-04-01T13:37:11 PDT" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_hiring_banner -->
+        <test-method signature="verify_findStore_banner()[pri:8, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:37:11 PDT" name="verify_findStore_banner" finished-at="2024-04-01T13:37:11 PDT" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_findStore_banner -->
+        <test-method signature="validate_browse_parts_button()[pri:9, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:37:11 PDT" name="validate_browse_parts_button" finished-at="2024-04-01T13:37:47 PDT" duration-ms="36491" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for condition (visibility of [[ChromeDriver: chrome on WINDOWS (8433a3113a3fa5cfb43795c3419d8a09)] -> css selector: span#selectedVehicle+input]) to be refreshed (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63995}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8433a3113a3fa5cfb43795c3419d8a09]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition (visibility of [[ChromeDriver: chrome on WINDOWS (8433a3113a3fa5cfb43795c3419d8a09)] -> css selector: span#selectedVehicle+input]) to be refreshed (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63995}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8433a3113a3fa5cfb43795c3419d8a09
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+at maven_test.maven_project.sampleTest.validate_browse_parts_button(sampleTest.java:347)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_browse_parts_button -->
+        <test-method is-config="true" signature="close_site()[pri:0, instance:maven_test.maven_project.sampleTest@235834f2]" started-at="2024-04-01T13:37:47 PDT" name="close_site" finished-at="2024-04-01T13:37:47 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_site -->
+      </class> <!-- maven_test.maven_project.sampleTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
