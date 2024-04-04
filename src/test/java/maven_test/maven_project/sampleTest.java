@@ -378,7 +378,29 @@ public class sampleTest {
 	}
 	
 	
-	
+	@Test(priority=10)
+	public void validate_item_counts() {
+		
+		WebElement first_filter_option=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button>span:nth-child(2)")));
+		String first_filter_option_text=first_filter_option.getText();
+		
+		WebElement first_filter_option_count=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button>span:nth-child(3)")));
+		Integer first_filter_option_count_number=Integer.parseInt(first_filter_option_count.getText().substring(1, 2));
+		
+		System.out.println(first_filter_option_text);
+		System.out.println(first_filter_option_count_number);
+		
+		WebElement first_filter_option_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button")));
+		first_filter_option_button.click();
+		
+		List<WebElement> filtered_items=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.boost-pfs-filter-product-item-image a")));
+		Integer count_filtered_items=filtered_items.size();
+		
+		System.out.println(count_filtered_items);
+		
+		Assert.assertTrue(count_filtered_items.equals(first_filter_option_count_number));
+		
+	}
 	
 
 
