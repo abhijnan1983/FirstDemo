@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Abhi\AppData\Local\Temp\testng-eclipse--90954876\testng-customsuite.xml</span>
+                    <span>C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-712232867\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
+                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -123,6 +123,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="maven_test.maven_project.sampleTest" class="method navigator-link" hash-for-method="find_store">find_store</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="maven_test.maven_project.sampleTest" class="method navigator-link" hash-for-method="search_sku_validate_product_page">search_sku_validate_product_page</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -187,8 +192,8 @@
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
 System info: host: &apos;DESKTOP-0IJD7UK&apos;, ip: &apos;10.0.0.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 041208ee18b883a8dbeca5d95a7e0072
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59254}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6929256234344a115f0da0e11f19cb8f
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
 	at maven_test.maven_project.sampleTest.verify_espot_rolling_images(sampleTest.java:149)
@@ -246,6 +251,13 @@ Session ID: 041208ee18b883a8dbeca5d95a7e0072
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="search_sku_validate_product_page">
+                  </a> <!-- search_sku_validate_product_page -->
+                  <span class="method-name">search_sku_validate_product_page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="validate_browse_parts_button">
                   </a> <!-- validate_browse_parts_button -->
                   <span class="method-name">validate_browse_parts_button</span>
@@ -298,7 +310,7 @@ Session ID: 041208ee18b883a8dbeca5d95a7e0072
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Abhi\AppData\Local\Temp\testng-eclipse--90954876\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-712232867\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -347,47 +359,51 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(11);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verify_espot_rolling_images')
 data.setCell(0, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(0, 3, 30399);
+data.setCell(0, 3, 30670);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'find_store')
+data.setCell(1, 1, 'validate_browse_parts_button')
 data.setCell(1, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(1, 3, 16595);
+data.setCell(1, 3, 17243);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validate_browse_parts_button')
+data.setCell(2, 1, 'find_store')
 data.setCell(2, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(2, 3, 15548);
+data.setCell(2, 3, 16642);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verify_top_brands')
+data.setCell(3, 1, 'search_sku_validate_product_page')
 data.setCell(3, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(3, 3, 2006);
+data.setCell(3, 3, 5055);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'validate_item_counts')
 data.setCell(4, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(4, 3, 926);
+data.setCell(4, 3, 2429);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validate_reserve_online_message')
+data.setCell(5, 1, 'verify_top_brands')
 data.setCell(5, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(5, 3, 268);
+data.setCell(5, 3, 1996);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'validate_logo')
 data.setCell(6, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(6, 3, 192);
+data.setCell(6, 3, 127);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verify_hiring_banner')
+data.setCell(7, 1, 'validate_reserve_online_message')
 data.setCell(7, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(7, 3, 82);
+data.setCell(7, 3, 112);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'verify_findStore_banner')
 data.setCell(8, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(8, 3, 73);
+data.setCell(8, 3, 87);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'close_popup')
+data.setCell(9, 1, 'verify_hiring_banner')
 data.setCell(9, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(9, 3, 23);
+data.setCell(9, 3, 82);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'close_popup')
+data.setCell(10, 2, 'maven_test.maven_project.sampleTest')
+data.setCell(10, 3, 31);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -425,49 +441,53 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">close_popup</span>
-                <span class="method-start">17407 ms</span>
+                <span class="method-start">24189 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_logo</span>
-                <span class="method-start">17438 ms</span>
+                <span class="method-start">24227 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_reserve_online_message</span>
-                <span class="method-start">17634 ms</span>
+                <span class="method-start">24357 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">find_store</span>
-                <span class="method-start">17904 ms</span>
+                <span class="method-start">24472 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verify_espot_rolling_images</span>
-                <span class="method-start">34502 ms</span>
+                <span class="method-start">41116 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_top_brands</span>
-                <span class="method-start">64907 ms</span>
+                <span class="method-start">71791 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_hiring_banner</span>
-                <span class="method-start">66916 ms</span>
+                <span class="method-start">73790 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_findStore_banner</span>
-                <span class="method-start">67000 ms</span>
+                <span class="method-start">73874 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_browse_parts_button</span>
-                <span class="method-start">67076 ms</span>
+                <span class="method-start">73963 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_item_counts</span>
-                <span class="method-start">82626 ms</span>
+                <span class="method-start">91208 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">search_sku_validate_product_page</span>
+                <span class="method-start">93640 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close_site</span>
-                <span class="method-start">83554 ms</span>
+                <span class="method-start">98697 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

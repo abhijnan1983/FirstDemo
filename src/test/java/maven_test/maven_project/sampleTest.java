@@ -400,6 +400,36 @@ public class sampleTest {
 		
 		Assert.assertTrue(count_filtered_items.equals(first_filter_option_count_number));
 		
+		WebElement logo=driver.findElement(By.cssSelector("div#shopify-section-static-header-2 section div+div>div td a img"));
+		logo.click();
+		
+	}
+	
+	@Test(priority=11)
+	public void search_sku_validate_product_page() {
+		
+		WebElement item_Search=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#psHeaderSearchTextBox")));
+		item_Search.sendKeys("0141093");
+		
+		WebElement search_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='form-field no-label']>button:nth-of-type(2)")));
+		search_button.click();
+		
+		item_Search.sendKeys(Keys.ENTER);
+		
+		try {
+			
+			WebElement product_link=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='boost-pfs-filter-product-bottom'] a")));
+			product_link.click();
+			
+		}catch(StaleElementReferenceException e) {
+			
+			driver.navigate().refresh();
+			WebElement product_link=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='boost-pfs-filter-product-bottom'] a")));
+			product_link.click();
+			
+		}
+		
+		
 	}
 	
 
