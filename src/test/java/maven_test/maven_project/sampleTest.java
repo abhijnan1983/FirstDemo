@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -336,19 +337,43 @@ public class sampleTest {
 		
 		//Validate the page which launches has buttons "Change Vehicle" and "Browse Parts" and also validate vehicle name displayed
 		
-		
-		  WebElement my_vehicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span")); 
-		  String my_vehicle_text=wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(my_vehicle))).getText(); 
-		  System.out.println(my_vehicle_text);
-		 
-		
-		WebElement button_change_vehiicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input"));
-		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(button_change_vehiicle)));
-		Assert.assertTrue(button_change_vehiicle.isEnabled());
-		
-		WebElement button_browse_parts2=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input+input"));
-		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(button_browse_parts2)));
-		Assert.assertTrue(button_browse_parts2.isEnabled());
+		try{
+			
+			WebElement my_vehicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span")); 
+			String my_vehicle_text=wait.until(ExpectedConditions.visibilityOf(my_vehicle)).getText(); 
+			System.out.println(my_vehicle_text);
+			 
+			
+			WebElement button_change_vehiicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_change_vehiicle));
+			Assert.assertTrue(button_change_vehiicle.isEnabled());
+			
+			WebElement button_browse_parts2=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_browse_parts2));
+			Assert.assertTrue(button_browse_parts2.isEnabled());
+			
+		}catch(StaleElementReferenceException e) {
+			
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			
+			WebElement my_vehicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span")); 
+			String my_vehicle_text=wait.until(ExpectedConditions.visibilityOf(my_vehicle)).getText(); 
+			System.out.println(my_vehicle_text);
+			 
+			
+			WebElement button_change_vehiicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_change_vehiicle));
+			Assert.assertTrue(button_change_vehiicle.isEnabled());
+			
+			WebElement button_browse_parts2=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_browse_parts2));
+			Assert.assertTrue(button_browse_parts2.isEnabled());
+			
+			
+			
+		}
+
 		
 	}
 	
