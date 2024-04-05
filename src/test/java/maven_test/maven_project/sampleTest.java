@@ -429,6 +429,24 @@ public class sampleTest {
 			
 		}
 		
+		//Verify product details page
+		
+		 //Verify that 3 thumbnails images are displayed
+		List<WebElement> thumbnails=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("nav.product-gallery--navigation>button")));
+		Integer thumnail_count=thumbnails.size();
+		System.out.println("Number of thumbnails displayed " +thumnail_count);
+		
+		//hover on starts and click read review
+		WebElement rating_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='bv_main_container_row_flex bv_ratings_summary']")));
+		a.moveToElement(rating_button).build().perform();
+		
+		WebElement read_review=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#bv_components_histogram>div+div")));
+		read_review.click();
+		
+		
+		
+		
+		
 		
 	}
 	
