@@ -1,109 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="10" failed="1" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-05T09:49:57 PDT" name="Default suite" finished-at="2024-04-05T09:52:00 PDT" duration-ms="123353">
+  <suite started-at="2024-04-16T10:32:36 PDT" name="Default suite" finished-at="2024-04-16T10:34:37 PDT" duration-ms="121571">
     <groups>
     </groups>
-    <test started-at="2024-04-05T09:49:57 PDT" name="Default test" finished-at="2024-04-05T09:52:00 PDT" duration-ms="123353">
+    <test started-at="2024-04-16T10:32:36 PDT" name="Default test" finished-at="2024-04-16T10:34:37 PDT" duration-ms="121571">
       <class name="maven_test.maven_project.sampleTest">
-        <test-method is-config="true" signature="launch_site()[pri:0, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:49:57 PDT" name="launch_site" finished-at="2024-04-05T09:50:36 PDT" duration-ms="39483" status="PASS">
+        <test-method is-config="true" signature="launch_site()[pri:0, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:32:36 PDT" name="launch_site" finished-at="2024-04-16T10:32:57 PDT" duration-ms="20956" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch_site -->
-        <test-method signature="close_popup()[pri:1, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:50:36 PDT" name="close_popup" finished-at="2024-04-05T09:50:37 PDT" duration-ms="129" status="PASS">
+        <test-method signature="close_popup()[pri:1, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:32:57 PDT" name="close_popup" finished-at="2024-04-16T10:32:57 PDT" duration-ms="24" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close_popup -->
-        <test-method signature="validate_logo()[pri:2, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:50:37 PDT" name="validate_logo" finished-at="2024-04-05T09:50:37 PDT" duration-ms="172" status="PASS">
+        <test-method signature="validate_logo()[pri:2, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:32:57 PDT" name="validate_logo" finished-at="2024-04-16T10:32:57 PDT" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_logo -->
-        <test-method signature="validate_reserve_online_message()[pri:3, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:50:37 PDT" name="validate_reserve_online_message" finished-at="2024-04-05T09:50:37 PDT" duration-ms="90" status="PASS">
+        <test-method signature="validate_reserve_online_message()[pri:3, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:32:57 PDT" name="validate_reserve_online_message" finished-at="2024-04-16T10:32:57 PDT" duration-ms="79" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_reserve_online_message -->
-        <test-method signature="find_store()[pri:4, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:50:37 PDT" name="find_store" finished-at="2024-04-05T09:51:02 PDT" duration-ms="25186" status="PASS">
+        <test-method signature="find_store()[pri:4, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:32:57 PDT" name="find_store" finished-at="2024-04-16T10:33:48 PDT" duration-ms="51301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- find_store -->
-        <test-method signature="verify_espot_rolling_images()[pri:5, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:02 PDT" name="verify_espot_rolling_images" finished-at="2024-04-05T09:51:33 PDT" duration-ms="30507" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: div#m-1689863456011>div:nth-child(1)>div:nth-child(1)>div>div:nth-child(4) (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.105 (399174dbe6e..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54982}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a84497efb68ea0a980fba794c1aa873c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div#m-1689863456011>div:nth-child(1)>div:nth-child(1)>div>div:nth-child(4) (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-0IJD7UK', ip: '10.0.0.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.105 (399174dbe6e..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54982}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a84497efb68ea0a980fba794c1aa873c
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
-at maven_test.maven_project.sampleTest.verify_espot_rolling_images(sampleTest.java:149)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="verify_espot_rolling_images()[pri:5, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:33:48 PDT" name="verify_espot_rolling_images" finished-at="2024-04-16T10:34:00 PDT" duration-ms="12014" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_espot_rolling_images -->
-        <test-method signature="verify_top_brands()[pri:6, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:33 PDT" name="verify_top_brands" finished-at="2024-04-05T09:51:35 PDT" duration-ms="2277" status="PASS">
+        <test-method signature="verify_top_brands()[pri:6, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:00 PDT" name="verify_top_brands" finished-at="2024-04-16T10:34:02 PDT" duration-ms="2093" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_top_brands -->
-        <test-method signature="verify_hiring_banner()[pri:7, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:35 PDT" name="verify_hiring_banner" finished-at="2024-04-05T09:51:35 PDT" duration-ms="79" status="PASS">
+        <test-method signature="verify_hiring_banner()[pri:7, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:02 PDT" name="verify_hiring_banner" finished-at="2024-04-16T10:34:02 PDT" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_hiring_banner -->
-        <test-method signature="verify_findStore_banner()[pri:8, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:35 PDT" name="verify_findStore_banner" finished-at="2024-04-05T09:51:35 PDT" duration-ms="89" status="PASS">
+        <test-method signature="verify_findStore_banner()[pri:8, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:02 PDT" name="verify_findStore_banner" finished-at="2024-04-16T10:34:02 PDT" duration-ms="63" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_findStore_banner -->
-        <test-method signature="validate_browse_parts_button()[pri:9, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:35 PDT" name="validate_browse_parts_button" finished-at="2024-04-05T09:51:50 PDT" duration-ms="15281" status="PASS">
+        <test-method signature="validate_browse_parts_button()[pri:9, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:02 PDT" name="validate_browse_parts_button" finished-at="2024-04-16T10:34:18 PDT" duration-ms="15590" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_browse_parts_button -->
-        <test-method signature="validate_item_counts()[pri:10, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:50 PDT" name="validate_item_counts" finished-at="2024-04-05T09:51:53 PDT" duration-ms="2852" status="PASS">
+        <test-method signature="validate_item_counts()[pri:10, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:18 PDT" name="validate_item_counts" finished-at="2024-04-16T10:34:22 PDT" duration-ms="4319" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validate_item_counts -->
-        <test-method signature="search_sku_validate_product_page()[pri:11, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:51:53 PDT" name="search_sku_validate_product_page" finished-at="2024-04-05T09:52:00 PDT" duration-ms="6981" status="PASS">
+        <test-method signature="search_sku_validate_product_page()[pri:11, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:22 PDT" name="search_sku_validate_product_page" finished-at="2024-04-16T10:34:37 PDT" duration-ms="14795" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search_sku_validate_product_page -->
-        <test-method is-config="true" signature="close_site()[pri:0, instance:maven_test.maven_project.sampleTest@73a1e9a9]" started-at="2024-04-05T09:52:00 PDT" name="close_site" finished-at="2024-04-05T09:52:00 PDT" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="close_site()[pri:0, instance:maven_test.maven_project.sampleTest@2f4948e4]" started-at="2024-04-16T10:34:37 PDT" name="close_site" finished-at="2024-04-16T10:34:37 PDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close_site -->

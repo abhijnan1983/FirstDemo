@@ -10,12 +10,14 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Duration;
+import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -51,12 +53,15 @@ public class sampleTest {
 		
 		
 		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
 		
-		driver=new ChromeDriver();
+		driver=new ChromeDriver(options);
+		driver.manage().deleteAllCookies();
 		
 		a=new Actions(driver);
 		js = (JavascriptExecutor)driver;
-		wait=new WebDriverWait(driver,30);
+		wait=new WebDriverWait(driver, 3000);
 		
 		driver.get("https://www.partsource.ca/");
 		
@@ -442,6 +447,12 @@ public class sampleTest {
 		
 		WebElement read_review=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#bv_components_histogram>div+div")));
 		read_review.click();
+		
+		//This code handles the shadow element to read the text rating snapshot
+		WebElement shadowhost=driver.findElement(By.cssSelector("div#shopify-section-static-product>section>article+div"));
+		SearchContext rootNode=shadowhost.getShadowRoot();
+		String rating_snapshot=rootNode.findElement(By.cssSelector("#bv-reviews-rating-snapshot-container")).getText();
+		System.out.println(rating_snapshot);
 		
 		
 		

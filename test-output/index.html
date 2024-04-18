@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-1231202926\testng-customsuite.xml</span>
+                    <span>C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-2021538302\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Default_suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="maven_test.maven_project.sampleTest" class="method navigator-link" hash-for-method="verify_espot_rolling_images">verify_espot_rolling_images</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    <span class="method-stats">11 methods,   11 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -152,6 +138,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="maven_test.maven_project.sampleTest" class="method navigator-link" hash-for-method="verify_espot_rolling_images">verify_espot_rolling_images</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="maven_test.maven_project.sampleTest" class="method navigator-link" hash-for-method="verify_findStore_banner">verify_findStore_banner</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -177,58 +168,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">maven_test.maven_project.sampleTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verify_espot_rolling_images">
-                  </a> <!-- verify_espot_rolling_images -->
-                  <span class="method-name">verify_espot_rolling_images</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div#m-1689863456011&gt;div:nth-child(1)&gt;div:nth-child(1)&gt;div&gt;div:nth-child(4) (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-0IJD7UK&apos;, ip: &apos;10.0.0.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.105 (399174dbe6e..., userDataDir: C:\Users\Abhi\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54982}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a84497efb68ea0a980fba794c1aa873c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
-	at maven_test.maven_project.sampleTest.verify_espot_rolling_images(sampleTest.java:149)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -286,6 +225,13 @@ Session ID: a84497efb68ea0a980fba794c1aa873c
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="verify_espot_rolling_images">
+                  </a> <!-- verify_espot_rolling_images -->
+                  <span class="method-name">verify_espot_rolling_images</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="verify_findStore_banner">
                   </a> <!-- verify_findStore_banner -->
                   <span class="method-name">verify_findStore_banner</span>
@@ -310,7 +256,7 @@ Session ID: a84497efb68ea0a980fba794c1aa873c
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-1231202926\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Abhi\AppData\Local\Temp\testng-eclipse-2021538302\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -361,49 +307,49 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verify_espot_rolling_images')
+data.setCell(0, 1, 'find_store')
 data.setCell(0, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(0, 3, 30507);
+data.setCell(0, 3, 51301);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'find_store')
+data.setCell(1, 1, 'validate_browse_parts_button')
 data.setCell(1, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(1, 3, 25186);
+data.setCell(1, 3, 15590);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validate_browse_parts_button')
+data.setCell(2, 1, 'search_sku_validate_product_page')
 data.setCell(2, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(2, 3, 15281);
+data.setCell(2, 3, 14795);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'search_sku_validate_product_page')
+data.setCell(3, 1, 'verify_espot_rolling_images')
 data.setCell(3, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(3, 3, 6981);
+data.setCell(3, 3, 12014);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'validate_item_counts')
 data.setCell(4, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(4, 3, 2852);
+data.setCell(4, 3, 4319);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'verify_top_brands')
 data.setCell(5, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(5, 3, 2277);
+data.setCell(5, 3, 2093);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'validate_logo')
 data.setCell(6, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(6, 3, 172);
+data.setCell(6, 3, 177);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'close_popup')
+data.setCell(7, 1, 'validate_reserve_online_message')
 data.setCell(7, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(7, 3, 129);
+data.setCell(7, 3, 79);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'validate_reserve_online_message')
+data.setCell(8, 1, 'verify_findStore_banner')
 data.setCell(8, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(8, 3, 90);
+data.setCell(8, 3, 63);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verify_findStore_banner')
+data.setCell(9, 1, 'verify_hiring_banner')
 data.setCell(9, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(9, 3, 89);
+data.setCell(9, 3, 54);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verify_hiring_banner')
+data.setCell(10, 1, 'close_popup')
 data.setCell(10, 2, 'maven_test.maven_project.sampleTest')
-data.setCell(10, 3, 79);
+data.setCell(10, 3, 24);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -441,53 +387,51 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">close_popup</span>
-                <span class="method-start">39633 ms</span>
+                <span class="method-start">20988 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_logo</span>
-                <span class="method-start">39772 ms</span>
+                <span class="method-start">21018 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_reserve_online_message</span>
-                <span class="method-start">39948 ms</span>
+                <span class="method-start">21198 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">find_store</span>
-                <span class="method-start">40040 ms</span>
+                <span class="method-start">21280 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">verify_espot_rolling_images</span>
-                <span class="method-start">65229 ms</span>
+                <span class="method-start">72584 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_top_brands</span>
-                <span class="method-start">95746 ms</span>
+                <span class="method-start">84601 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_hiring_banner</span>
-                <span class="method-start">98027 ms</span>
+                <span class="method-start">86705 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_findStore_banner</span>
-                <span class="method-start">98107 ms</span>
+                <span class="method-start">86761 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_browse_parts_button</span>
-                <span class="method-start">98201 ms</span>
+                <span class="method-start">86829 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validate_item_counts</span>
-                <span class="method-start">113488 ms</span>
+                <span class="method-start">102424 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">search_sku_validate_product_page</span>
-                <span class="method-start">116342 ms</span>
+                <span class="method-start">106746 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close_site</span>
-                <span class="method-start">123326 ms</span>
+                <span class="method-start">121544 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
