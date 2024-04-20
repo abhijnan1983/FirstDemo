@@ -7,7 +7,6 @@
         <methods>
           <include name="validate_logo"/>
           <include name="find_store"/>
-          <include name="validate_reserve_online_banner"/>
           <include name="initialize_driver"/>
         </methods>
       </class> <!-- maven_test.maven_project.ParallelTest -->

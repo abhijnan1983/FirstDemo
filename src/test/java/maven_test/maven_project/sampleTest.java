@@ -10,11 +10,14 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Duration;
+import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -50,12 +53,15 @@ public class sampleTest {
 		
 		
 		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
 		
-		driver=new ChromeDriver();
+		driver=new ChromeDriver(options);
+		driver.manage().deleteAllCookies();
 		
 		a=new Actions(driver);
 		js = (JavascriptExecutor)driver;
-		wait=new WebDriverWait(driver,30);
+		wait=new WebDriverWait(driver, 3000);
 		
 		driver.get("https://www.partsource.ca/");
 		
@@ -67,7 +73,11 @@ public class sampleTest {
 	
 	@AfterTest
 	public void close_site() {
-		//driver.quit();
+
+		//driver.quit()
+		
+		
+
 	}
 	
 	
@@ -280,7 +290,7 @@ public class sampleTest {
 	}
 	
 	@Test(priority=9)
-	public void validate_browse_parts_button() {
+	public void validate_browse_parts_button() throws InterruptedException {
 		
 		//Validate that browse parts button is disabled until vehicle's Year, Make, Model, Trim and Engine selected
 		WebElement button_browse_parts=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#vid_browse")));
@@ -289,10 +299,6 @@ public class sampleTest {
 		//Select vehicle year and ensure that browse parts button is disabled after vehicle year is selected
 		//Model, Trim and Engine fields should be disabled after selecting the year
 		WebElement v_year=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_year")));
-		WebElement v_model=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(4)")));
-		WebElement v_trim=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(5)")));
-		WebElement v_engine=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#YMM_options>span:nth-child(6)")));
-		
 		s=new Select(v_year);
 		s.selectByVisibleText("2019");
 		Assert.assertFalse(button_browse_parts.isEnabled());
@@ -304,12 +310,156 @@ public class sampleTest {
 		s=new Select(v_make);
 		s.selectByVisibleText("Toyota");
 		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		//Select vehicle model and ensure after selection, the browse parts button is disabled
+		WebElement v_model=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_model")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_model")));
+		s=new Select(v_model);
+		s.selectByVisibleText("Camry");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		//Select vehicle trim and ensure after selection, browse parts button is disabled
+		WebElement v_trim=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_trim")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_trim")));
+		s=new Select(v_trim);
+		Thread.sleep(2000);
+		s.selectByVisibleText("XLE");
+		Assert.assertFalse(button_browse_parts.isEnabled());
+		
+		
+		//Select vehicle engine and ensure that browse parts button is enabled after engine is selected
+		WebElement v_engine=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select#ymm_engine")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#ymm_engine")));
+		s=new Select(v_engine);
+		Thread.sleep(2000);
+		s.selectByVisibleText("L4-152cid 2.5L FI A25A-FKS 203HP");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(button_browse_parts));
+		Assert.assertTrue(button_browse_parts.isEnabled());
+		
+		//Click Browse parts button
+		button_browse_parts.click();
+		
+		//Validate the page which launches has buttons "Change Vehicle" and "Browse Parts" and also validate vehicle name displayed
+		
+		try{
+			
+			WebElement my_vehicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span")); 
+			String my_vehicle_text=wait.until(ExpectedConditions.visibilityOf(my_vehicle)).getText(); 
+			System.out.println(my_vehicle_text);
+			 
+			
+			WebElement button_change_vehiicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_change_vehiicle));
+			Assert.assertTrue(button_change_vehiicle.isEnabled());
+			
+			WebElement button_browse_parts2=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_browse_parts2));
+			Assert.assertTrue(button_browse_parts2.isEnabled());
+			
+		}catch(StaleElementReferenceException e) {
+			
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			
+			WebElement my_vehicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span")); 
+			String my_vehicle_text=wait.until(ExpectedConditions.visibilityOf(my_vehicle)).getText(); 
+			System.out.println(my_vehicle_text);
+			 
+			
+			WebElement button_change_vehiicle=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_change_vehiicle));
+			Assert.assertTrue(button_change_vehiicle.isEnabled());
+			
+			WebElement button_browse_parts2=driver.findElement(By.cssSelector("div#YMM_bar>span:nth-child(2)>div>span+input+input"));
+			wait.until(ExpectedConditions.visibilityOf(button_browse_parts2));
+			Assert.assertTrue(button_browse_parts2.isEnabled());
+			
+			
+			
+		}
 
 		
 	}
 	
 	
+	@Test(priority=10)
+	public void validate_item_counts() {
+		
+		WebElement first_filter_option=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button>span:nth-child(2)")));
+		String first_filter_option_text=first_filter_option.getText();
+		
+		WebElement first_filter_option_count=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button>span:nth-child(3)")));
+		Integer first_filter_option_count_number=Integer.parseInt(first_filter_option_count.getText().substring(1, 2));
+		
+		System.out.println(first_filter_option_text);
+		System.out.println(first_filter_option_count_number);
+		
+		WebElement first_filter_option_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id*='boost-pfs-filter-tree2-pf-m-::mm-google-shopping::custom-label-2']>div>ul>li:nth-child(1)>button")));
+		first_filter_option_button.click();
+		
+		List<WebElement> filtered_items=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.boost-pfs-filter-product-item-image a")));
+		Integer count_filtered_items=filtered_items.size();
+		
+		System.out.println(count_filtered_items);
+		
+		Assert.assertTrue(count_filtered_items.equals(first_filter_option_count_number));
+		
+		WebElement logo=driver.findElement(By.cssSelector("div#shopify-section-static-header-2 section div+div>div td a img"));
+		logo.click();
+		
+	}
 	
+	@Test(priority=11)
+	public void search_sku_validate_product_page() {
+		
+		WebElement item_Search=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#psHeaderSearchTextBox")));
+		item_Search.sendKeys("0141093");
+		
+		WebElement search_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='form-field no-label']>button:nth-of-type(2)")));
+		search_button.click();
+		
+		item_Search.sendKeys(Keys.ENTER);
+		
+		try {
+			
+			WebElement product_link=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='boost-pfs-filter-product-bottom'] a")));
+			product_link.click();
+			
+		}catch(StaleElementReferenceException e) {
+			
+			driver.navigate().refresh();
+			WebElement product_link=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='boost-pfs-filter-product-bottom'] a")));
+			product_link.click();
+			
+		}
+		
+		//Verify product details page
+		
+		 //Verify that 3 thumbnails images are displayed
+		List<WebElement> thumbnails=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("nav.product-gallery--navigation>button")));
+		Integer thumnail_count=thumbnails.size();
+		System.out.println("Number of thumbnails displayed " +thumnail_count);
+		
+		//hover on starts and click read review
+		WebElement rating_button=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='bv_main_container_row_flex bv_ratings_summary']")));
+		a.moveToElement(rating_button).build().perform();
+		
+		WebElement read_review=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#bv_components_histogram>div+div")));
+		read_review.click();
+		
+		//This code handles the shadow element to read the text rating snapshot
+		WebElement shadowhost=driver.findElement(By.cssSelector("div#shopify-section-static-product>section>article+div"));
+		SearchContext rootNode=shadowhost.getShadowRoot();
+		String rating_snapshot=rootNode.findElement(By.cssSelector("#bv-reviews-rating-snapshot-container")).getText();
+		System.out.println(rating_snapshot);
+		
+		
+		
+		
+		
+		
+	}
 	
 
 

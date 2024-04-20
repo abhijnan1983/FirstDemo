@@ -6,8 +6,11 @@
       <class name="maven_test.maven_project.sampleTest">
         <methods>
           <include name="verify_espot_rolling_images"/>
+          <include name="verify_top_brands"/>
           <include name="launch_site"/>
+          <include name="validate_browse_parts_button"/>
           <include name="close_site"/>
+          <include name="find_store"/>
         </methods>
       </class> <!-- maven_test.maven_project.sampleTest -->
     </classes>
