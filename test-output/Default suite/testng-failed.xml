@@ -3,23 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="maven_test.maven_project.sampleTest">
+      <class name="maven_test.maven_project.ExpediaTest">
         <methods>
-          <include name="verify_top_brands"/>
-          <include name="verify_espot_rolling_images"/>
-          <include name="close_popup"/>
           <include name="launch_site"/>
-          <include name="verify_hiring_banner"/>
-          <include name="validate_browse_parts_button"/>
-          <include name="search_sku_validate_product_page"/>
           <include name="validate_logo"/>
-          <include name="verify_findStore_banner"/>
           <include name="close_site"/>
-          <include name="validate_reserve_online_message"/>
-          <include name="validate_item_counts"/>
-          <include name="find_store"/>
+          <include name="booking_car"/>
+          <include name="validate_tabs_homepage"/>
         </methods>
-      </class> <!-- maven_test.maven_project.sampleTest -->
+      </class> <!-- maven_test.maven_project.ExpediaTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
